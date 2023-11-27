@@ -1,70 +1,79 @@
 package tn.esprit;
 
 import tn.esprit.gestiondepartement.Departement;
+import tn.esprit.gestionemployes.Employe;
 
 import java.util.HashMap;
-
-import static java.lang.System.out;
+import java.util.TreeMap;
 
 public class AffectationHashMap {
-    private static HashMap<Employe, Departement> affectations = new HashMap<>();
 
-    public void affecterEmploye(Employe employe, Departement departement) {
-        affectations.put(employe, departement);
+    private HashMap<Employe, Departement> map;
+// Instruction 1 AffectationHashMap()
+    public AffectationHashMap() {
+        map = new HashMap<>();
     }
-
-    public void desaffecterEmploye(Employe employe) {
-        affectations.remove(employe);
-    }
-
-    public Departement getDepartement(Employe employe) {
-        return affectations.get(employe);
-    }
-
-    public void displayAffectations() {
-        for (Employe employe : affectations.keySet()) {
-            Departement departement = affectations.get(employe);
-            out.println(employe.getNom() + " " + employe.getPrenom() + " -> " + departement.getNom());
-        }
-    }
-
+// Instruction 2 ajouterEmployeDepartement()
     public void ajouterEmployeDepartement(Employe e, Departement d) {
-        if (!affectations.containsKey(e)) {
-            affectations.put(e, d);
-            out.println("L'employé " + e.getNom() + " " + e.getPrenom() + " a été affecté au département " + d.getNom());
-        } else {
-            out.println("L'employé " + e.getNom() + " " + e.getPrenom() + " est déjà affecté à un département");
+        if (map.containsKey(e)) {
+            throw new RuntimeException("L'employé est déjà affecté à un département.");
         }
+
+        map.put(e, d);
+    }
+// Instructions 3 afficherEmployeDepartement()
+    public boolean afficherEmployesEtDepartements() {
+        for (Employe e : map.keySet()) {
+            System.out.println("Employé : " + e + ", département : " + map.get(e));
+        }
+        return false;
     }
 
-    public void afficherEmployesEtDepartements() {
-        for (Employe employe : affectations.keySet()) {
-            Departement departement = affectations.get(employe);
-            out.println("Employé : " + employe.getNom() + " " + employe.getPrenom() + " | Département : " + departement.getNom());
+//    Instructions 4 supprimerEmploye()
+
+    public void supprimerEmploye(Employe e) {
+        if (!map.containsKey(e)) {
+            throw new RuntimeException("L'employé n'est pas affecté à un département.");
+        }
+
+        map.remove(e);
+    }
+// Instruction 5 supprimerEmployeDepartement()
+    public void supprimerEmployeEtDepartement(Employe e, Departement d) {
+        if (!map.containsKey(e)) {
+            throw new RuntimeException("L'employé n'est pas affecté à un département.");
+        } else if (map.get(e) != d) {
+            throw new RuntimeException("L'employé n'est pas affecté au département spécifié.");
+        }
+
+        map.remove(e);
+    }
+    // Instructions 6 afficherEmployes()
+    public void afficherEmployes() {
+        for (Employe e : map.keySet()) {
+            System.out.println(e);
         }
     }
-
-    public static class Employe  {
-        private String nom;
-        private String prenom;
-
-        public String getNom() {
-            return nom;
-        }
-
-        public void setNom(String nom) {
-            this.nom = nom;
-        }
-
-        public String getPrenom() {
-            return prenom;
-        }
-
-        public void setPrenom(String prenom) {
-            this.prenom = prenom;
+// Instructions 7 afficherDepartements()
+    public void afficherDepartements() {
+        for (Departement d : map.values()) {
+            System.out.println(d);
         }
     }
-    Employe employe = new Employe();
-    Departement departement = affectations.remove(employe);
+// Instruction 8 rechercherEmploye (Employé e)
+    public boolean rechercherEmploye(Employe e) {
+        return map.containsKey(e);
+    }
 
+
+    //Instruction 9 rechercherDepartement (Departement d)
+    public boolean rechercherDepartement(Departement d) {
+        return map.containsValue(d);
+    }
+
+    //Instruction 10 TreeMap&lt;Employe, Departement&gt; trierMap()
+    public TreeMap<Employe, Departement> trierMap() {
+        TreeMap<Employe, Departement> triee = new TreeMap<>(map);
+        return triee;
+    }
 }

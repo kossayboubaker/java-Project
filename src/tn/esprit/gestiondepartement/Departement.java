@@ -17,6 +17,9 @@ public class Departement {
         this.nbr_employes = nbr_employes;
     }
 
+    public Departement(String ressourcesHumaines) {
+    }
+
     public int getId() {
         return id;
     }

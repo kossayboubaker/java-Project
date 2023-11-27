@@ -1,6 +1,5 @@
 package tn.esprit.gestionemployes;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Employe {
@@ -12,7 +11,7 @@ String nom_department;
 int grade;
 
 
-public Employe(){}
+public Employe(String pierre, String mrtyu, int i){}
     public Employe(int id, String nom, String prenom, String nom_department, int grade) {
         this.id = id;
         this.nom = nom;

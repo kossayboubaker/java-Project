@@ -50,7 +50,7 @@ public class EmployeArrayList implements IGestion<Employe> {
     }
 
     public void trierEmployeParNomDepartementEtGrade() {
-        /*Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
+       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
             @Override
             public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
                 int compareNom = e1.getNom().compareTo(e2.getNom());
@@ -63,6 +63,6 @@ public class EmployeArrayList implements IGestion<Employe> {
                 }
                 return Integer.compare(e1.getGrade(), e2.getGrade());
             }
-        });*/
+        });
     }
 }
