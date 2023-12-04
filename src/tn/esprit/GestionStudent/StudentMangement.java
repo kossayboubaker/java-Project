@@ -10,32 +10,32 @@ import java.util.stream.Stream;
 
 public class StudentMangement implements Management {
     @Override
-    public void displayStudents(List<Etudiant> students, Consumer<Etudiant> con) {
+    public void displayStudents(List<Student> students, Consumer<Student> con) {
 
     }
 
     @Override
-    public void displayStudentsByFilter(List<Etudiant> students, Predicate<Etudiant> pre, Consumer<Etudiant> con) {
+    public void displayStudentsByFilter(List<Student> students, Predicate<Student> pre, Consumer<Student> con) {
 
     }
 
     @Override
-    public String returnStudentsNames(List<Etudiant> students, Function<Etudiant, String> fun) {
+    public String returnStudentsNames(List<Student> students, Function<Student, String> fun) {
         return null;
     }
 
     @Override
-    public Etudiant createStudent(Supplier<Etudiant> sup) {
+    public Student createStudent(Supplier<Student> sup) {
         return null;
     }
 
     @Override
-    public List<Etudiant> sortStudentsById(List<Etudiant> students, Comparator<Etudiant> com) {
+    public List<Student> sortStudentsById(List<Student> students, Comparator<Student> com) {
         return null;
     }
 
     @Override
-    public Stream<Etudiant> convertToStream(List<Etudiant> students) {
+    public Stream<Student> convertToStream(List<Student> students) {
         return null;
     }
 }

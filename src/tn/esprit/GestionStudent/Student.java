@@ -1,17 +1,17 @@
 package tn.esprit.GestionStudent;
 
-public class Etudiant {
+public class Student {
     int id;
     String nom;
     int age;
 
     // constructor default
-    public Etudiant() {
+    public Student() {
 
     }
 
     // constructor with parameters
-    public Etudiant(int id, String nom, int age) {
+    public Student(int id, String nom, int age) {
         this.id = id;
         this.nom = nom;
         this.age = age;
