@@ -1,9 +1,7 @@
-import tn.esprit.AffectationHashMap;
+import tn.esprit.gestionemployes.AffectationHashMap;
 import tn.esprit.gestiondepartement.Departement;
 import tn.esprit.gestionemployes.Employe;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.TreeMap;
 
 public class Main {

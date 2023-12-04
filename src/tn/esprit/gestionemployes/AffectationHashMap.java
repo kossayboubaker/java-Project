@@ -1,4 +1,4 @@
-package tn.esprit;
+package tn.esprit.gestionemployes;
 
 import tn.esprit.gestiondepartement.Departement;
 import tn.esprit.gestionemployes.Employe;

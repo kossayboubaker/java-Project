@@ -1,6 +1,8 @@
-package tn.esprit.gestionemployes;
+package tn.esprit.GestionEntreprise;
 
 import tn.esprit.gestiondepartement.Departement;
+import tn.esprit.gestionemployes.Employe;
+import tn.esprit.gestionemployes.IGestion;
 
 import java.util.HashMap;
 import java.util.Map;

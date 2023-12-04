@@ -1,4 +1,4 @@
-package tn.esprit;
+package tn.esprit.GestionStudent;
 
 import java.util.Comparator;
 import java.util.List;
