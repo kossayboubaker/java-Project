@@ -29,12 +29,6 @@ public class Main {
         affectation.supprimerEmploye(e1);
         affectation.afficherEmployesEtDepartements();
 
-
-// class collections
-
-     /*   Collections.sort(listParticipants);
-        for ()*/
-
         // Test de la méthode trierMap()
         TreeMap<Employe, Departement> triee = affectation.trierMap();
         System.out.println(triee);

@@ -5,6 +5,7 @@ import tn.esprit.gestiondepartement.Departement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class EmployeArrayList implements IGestion<Employe> {
     static ArrayList<Employe> employes = new ArrayList<>();
@@ -16,7 +17,7 @@ public class EmployeArrayList implements IGestion<Employe> {
 
     @Override
     public boolean rechercherEmploye(String nom) {
-       for( int i=0;i< employes.size();i++)
+        for( int i=0;i< employes.size();i++)
         {
             if (employes.get(i).getNom().equals(nom)) {
                 return true;
@@ -47,19 +48,10 @@ public class EmployeArrayList implements IGestion<Employe> {
         }
     }
 
-    public void trierEmployeParId() {
-       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
-            @Override
-            public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
-                return Integer.compare(e1.getId(), e2.getId());
-            }
-        });
-    }
-
     public void trierEmployeParNomDepartementEtGrade() {
-       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
+        Collections.sort(employes, new Comparator<Employe>() {
             @Override
-            public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
+            public int compare(Employe e1, Employe e2) {
                 int compareNom = e1.getNom().compareTo(e2.getNom());
                 if (compareNom != 0) {
                     return compareNom;
@@ -75,9 +67,9 @@ public class EmployeArrayList implements IGestion<Employe> {
 
     // trierEmploye par nom
     public void trierEmployeParNom() {
-       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
+        Collections.sort(employes, new Comparator<Employe>() {
             @Override
-            public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
+            public int compare(Employe e1, Employe e2) {
                 return e1.getNom().compareTo(e2.getNom());
             }
         });
