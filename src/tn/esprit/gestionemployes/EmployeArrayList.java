@@ -1,11 +1,13 @@
 package tn.esprit.gestionemployes;
 
+import tn.esprit.gestiondepartement.Departement;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class EmployeArrayList implements IGestion<Employe> {
-    ArrayList<Employe> employes = new ArrayList<>();
+    static ArrayList<Employe> employes = new ArrayList<>();
 
     @Override
     public void ajouterEmploye(Employe employe) {
@@ -29,6 +31,11 @@ public class EmployeArrayList implements IGestion<Employe> {
     }
 
     @Override
+    public boolean rechercherDepartement(Departement d) {
+        return false;
+    }
+
+    @Override
     public void supprimerEmploye(Employe employe) {
         employes.remove(employe);
     }
@@ -41,9 +48,9 @@ public class EmployeArrayList implements IGestion<Employe> {
     }
 
     public void trierEmployeParId() {
-        Collections.sort(employes, new Comparator<Employe>() {
+       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
             @Override
-            public int compare(Employe e1, Employe e2) {
+            public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
                 return Integer.compare(e1.getId(), e2.getId());
             }
         });
@@ -62,6 +69,16 @@ public class EmployeArrayList implements IGestion<Employe> {
                     return compareDepartement;
                 }
                 return Integer.compare(e1.getGrade(), e2.getGrade());
+            }
+        });
+    }
+
+    // trierEmploye par nom
+    public void trierEmployeParNom() {
+       Collections.sort(employes, new Comparator<tn.esprit.gestionemployes.Employe>() {
+            @Override
+            public int compare(tn.esprit.gestionemployes.Employe e1, tn.esprit.gestionemployes.Employe e2) {
+                return e1.getNom().compareTo(e2.getNom());
             }
         });
     }

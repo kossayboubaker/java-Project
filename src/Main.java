@@ -2,6 +2,8 @@ import tn.esprit.AffectationHashMap;
 import tn.esprit.gestiondepartement.Departement;
 import tn.esprit.gestionemployes.Employe;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.TreeMap;
 
 public class Main {
@@ -30,7 +32,10 @@ public class Main {
         affectation.afficherEmployesEtDepartements();
 
 
+// class collections
 
+     /*   Collections.sort(listParticipants);
+        for ()*/
 
         // Test de la méthode trierMap()
         TreeMap<Employe, Departement> triee = affectation.trierMap();

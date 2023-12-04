@@ -5,19 +5,19 @@ import tn.esprit.gestionemployes.Employe;
 
 import java.util.HashMap;
 import java.util.TreeMap;
-
+/*Cette classe contient une collection de type HashMap. La clé est un objet de type Employe
+  la valeur est un objet de type Departement.*/
 public class AffectationHashMap {
-
     private HashMap<Employe, Departement> map;
 // Instruction 1 AffectationHashMap()
     public AffectationHashMap() {
         map = new HashMap<>();
     }
-// Instruction 2 ajouterEmployeDepartement()
+// Instructions 2 ajouterEmployeDepartement()
     public void ajouterEmployeDepartement(Employe e, Departement d) {
-        if (map.containsKey(e)) {
-            throw new RuntimeException("L'employé est déjà affecté à un département.");
-        }
+    if (map.containsKey(e)) {
+        throw new RuntimeException("L'employé est déjà affecté à un département.");
+    }
 
         map.put(e, d);
     }

@@ -90,7 +90,7 @@ public Employe(String pierre, String mrtyu, int i){}
     @Override
     public int hashCode() {
 
-        return this.id+100;
+        return this.id*100;
     }
 }
 

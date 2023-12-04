@@ -1,6 +1,8 @@
 package tn.esprit.gestionemployes;
 
 
+import tn.esprit.gestiondepartement.Departement;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +32,11 @@ public class EmployeSet implements IGestion<Employe> {
     }
 
     @Override
+    public boolean rechercherDepartement(Departement d) {
+        return false;
+    }
+
+    @Override
     public void supprimerEmploye(Employe employe) {
         employes.remove(employe);
     }
@@ -42,6 +49,7 @@ public class EmployeSet implements IGestion<Employe> {
     }
 
     public void trierEmployeParId() {
+        // Collections.sort(employes) ; // n List --> comparable ??? TreeSet + set
 
     }
 

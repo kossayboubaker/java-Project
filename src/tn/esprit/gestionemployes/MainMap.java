@@ -17,7 +17,7 @@ public class MainMap {
         classes.put(5552, "Physique");
         classes.put(3, "Anglais");
 
-                classes.remove(3);
+        classes.remove(3);
         System.out.println(classes.get(3));
         classes.containsValue("java");
         //afficher les
